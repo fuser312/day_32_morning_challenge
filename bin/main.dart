@@ -18,21 +18,51 @@
 
 class Shiritori{
   List<String> words=[];
-  bool game_over;
+  bool game_over = false;
 
   bool play(String word){
-    int indexOflastWord = words.indexOf(word)-1;
-    List lastWord = words[indexOflastWord].split('');
-    if(!words.contains(word) && ){
-
+    if(word == ""){
+      game_over = true;
+      return false;
     }
+    else if(words.isEmpty && !game_over){
+      words.add(word);
+      return true;
+    }
+
+    else if(words.contains(word)){
+      game_over = true;
+      return false;
+    }
+
+    else if(words.isNotEmpty && !game_over){
+      if(word.split("").first == words.last.split("").last ){
+        words.add(word);
+        return true;
+      }
+      game_over = true;
+      return false;
+    }
+
+
+    else{
+     game_over = true;
+     return false;
+
+   }
+
+
   }
   restart(){
     words=[];
-    game_over=false;
+    game_over = false;
   }
 }
 main() {
   Shiritori game1=Shiritori();
+  print(game1.play('hello'));
+  print(game1.play("orange"));
+ // print((game1.words.contains('orange')&&((game1.words[game1.words.indexOf('orange')-1].split("").last == 'orange'.split("").first))));
+
 
 }
