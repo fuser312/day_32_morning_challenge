@@ -1,7 +1,10 @@
 import 'package:test/test.dart';
 
 void main() {
-print("Hello sahil");
-print("2nd change");
-print("3rd change");
+  test('Shiritori', () {
+    expect(shiritori(["hello","oxygen","nephew","owl"]),true);
+    expect(shiritori(["hello","oxygen","cow","owl"]),false);
+    expect(shiritori(["hello"]),false);
+    expect(shiritori([]),false);
+  });
 }
