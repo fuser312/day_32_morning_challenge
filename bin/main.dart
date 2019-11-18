@@ -17,7 +17,7 @@
 // game_over boolean to false. It should return "game restarted".
 
 class Shiritori{
-  List<String> words=["Hello","oxygen","nephew","work"];
+  List<String> words=[];
   bool game_over;
   bool play(String word){
 
