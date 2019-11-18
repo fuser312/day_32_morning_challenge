@@ -21,6 +21,7 @@ class Shiritori{
   bool game_over = false;
 
   bool play(String word){
+    word = word.toLowerCase();
     if(word == ""){
       game_over = true;
       return false;
